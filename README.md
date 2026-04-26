@@ -7,7 +7,7 @@ Official VideoGen video player for the web. A lightweight wrapper that decodes V
 ## Installation
 
 ```sh
-npm i @videogen/player @mux/mux-player
+npm i @videogen/player
 ```
 
 ## Usage
