@@ -1,0 +1,25 @@
+{
+  "name": "@videogen/player",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "generate": "rm -rf /tmp/vg-player-generate && git clone --depth 1 https://github.com/video-gen/videogen-player.git /tmp/vg-player-generate && rsync -a --delete --exclude='.git' --exclude='node_modules' --exclude='dist' ./ /tmp/vg-player-generate/ && cd /tmp/vg-player-generate && git add -A && git diff --cached --quiet || (git commit -m 'Sync from monorepo' && git push) && rm -rf /tmp/vg-player-generate",
+    "publish": "rm -rf /tmp/vg-player-publish && git clone --depth 1 https://github.com/video-gen/videogen-player.git /tmp/vg-player-publish && cd /tmp/vg-player-publish && pnpm install && pnpm build && npm publish --access public && rm -rf /tmp/vg-player-publish",
+    "release": "pnpm run generate && pnpm run publish"
+  },
+  "peerDependencies": {
+    "@mux/mux-player": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@mux/mux-player": "^3.12.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
