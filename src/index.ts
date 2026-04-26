@@ -18,11 +18,7 @@ export function decodePublicPlaybackId(encodedId: string): string {
   const base64url = encodedId.slice(VG_PLAY_PREFIX.length);
   const base64 = base64url.replace(/-/g, "+").replace(/_/g, "/");
 
-  if (typeof atob === "function") {
-    return atob(base64);
-  }
-
-  return Buffer.from(base64, "base64").toString("utf-8");
+  return atob(base64);
 }
 
 export interface VideoGenPlayerConfig {
