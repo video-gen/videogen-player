@@ -36,4 +36,4 @@ createVideoGenPlayer(container, {
 
 ## Documentation
 
-Full API documentation is available at [videogen.io/docs](https://videogen.io/docs).
+Full API documentation is available at [videogen.docs.buildwithfern.com/embedding-videos](https://videogen.docs.buildwithfern.com/embedding-videos).
