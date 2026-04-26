@@ -1,6 +1,6 @@
 {
   "name": "@videogen/player",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Official VideoGen video player for the web. Lightweight wrapper with built-in branding.",
   "private": false,
   "type": "module",
